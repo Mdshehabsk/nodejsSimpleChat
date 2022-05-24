@@ -1,0 +1,37 @@
+<%- include('./common/start.ejs') %>
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="logo">
+        <a href="/">Chat</a>
+      </div>
+      <ul>
+        <li>
+          <a href="/logout">logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="chatbox">
+    <div class="left">
+      <% user.forEach(element => { %>
+        <a href=" /chat/<%= element._id %>  " class="user_link" >
+          <div class="chat-item">
+            <img src="/image/<%= element.avatar %>" alt="no image" />
+            <div class="info">
+              <b> <%= element.firstname + element.lastname %>  </b>
+              <p class="msg">How are you ...</p>
+            </div>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+    <div class="right">
+        <b>Select and user</b>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./common/end.ejs') %>

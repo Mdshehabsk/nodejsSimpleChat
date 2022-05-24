@@ -1,0 +1,49 @@
+<%- include('./common/start.ejs') %> 
+<% if(err){%> <div class="alert alert-danger" > <%= err %>  </div> <%} else{%> <% null %>  <%} %> 
+      <div class="container">
+          <div class="row">
+              <div class="col-12 ">
+                  <div class="login  ">
+                      <div class="heading">
+                            <h1>Register Form</h1>
+                      </div>
+                      <form autocomplete="off" enctype="multipart/form-data" action="/register" method="post" >
+                        <div class="name">
+                            <div class="input-box">
+                                <label for="firstname">first name</label>
+                                <input type="text" name="firstname" id="firstname" >
+                            </div>
+                            <div class="input-box">
+                                <label for="lastname">last name</label>
+                                <input type="text" name="lastname" id="lastname" >
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="email">email </label>
+                            <input type="email" name="email" id="email" >
+                        </div>
+                        <div class="input-box">
+                            <label for="password">password</label>
+                            <input type="password" name="password" id="password" >
+                        </div>
+                        <div class="input-box">
+                            <label for="cpassword">confirm password</label>
+                            <input type="password" name="cpassword" id="cpassword" >
+                        </div>
+                        <div class="input-box">
+                            <label for="avatar">Upload an image</label>
+                            <input type="file" name="avatar" id="avatar" >
+                        </div>
+                        <div class="input-box">
+                            <input type="submit" value="Register Now" class="submit-btn" >
+                        </div>
+                        <div class="input-box">
+                            <p>Already have an account?</p>
+                            <a href="/" class="login-btn" >Login</a>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <%- include('./common/end.ejs') %> 

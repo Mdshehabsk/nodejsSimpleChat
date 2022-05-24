@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif ;
+}
+
+:root{
+    --roboto:'Roboto', sans-serif;
+    --white:#f5f5f5;
+    --blue:#2a728f;
+}
+h1,h2,h3,h4,h5,h6,a,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+    max-width: 100%;
+
+}
+p{
+    margin: 0;
+}
+h1{
+    font-family: var(--roboto);
+}
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 4%,
+      rgba(86, 147, 127, 1) 94%
+    );
+  }
+.login{
+    width: 500px;
+    background-color:var(--white) ;
+    margin: 100px auto;
+    display: flex;
+    flex-flow: column ;
+    align-items: center;
+    border-radius: 2px 5px;
+}
+.login form{
+    padding: 0 20px;
+    width: 100%;
+}
+.login .heading{
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+}
+.login h1{
+    font-size: 30px;
+    text-align: center;
+    color: var(--white);
+    margin: 0;
+}
+.login .name{
+    display: flex;
+    justify-content: space-between;
+}
+.login .name .input-box{
+    margin-top: 20px;
+}
+.login .name .input-box input{
+    width: 90%;   
+}
+.login .input-box{
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.login .input-box label{
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+}
+.login .input-box input{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #939493;
+    font-size: 18px;
+    font-weight: 400;
+}
+.login .input-box input:focus{
+    outline: none;
+}
+.login .input-box .submit-btn{
+    background-color: var(--blue);
+    color: var(--white);
+}
+.login .input-box .submit-btn:hover{
+    background-color: #1d4e61;
+    color: var(--white);
+}
+.login .input-box .login-btn{
+   width: 100%;
+    background-color: var(--white);
+    color: var(--blue);
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 0;
+    border: 2px solid var(--blue);
+}
+
+/* chatbox desing  */
+
+.chatbox{
+    max-width: 80%;
+    height: 500px;
+    margin: 100px auto;
+    background-color: var(--white);
+    box-shadow: 2px 3px 5px #474646;
+    display: flex;
+}
+.chatbox .left{
+    flex-basis: 30%;
+    background-color: #e4e4e4;
+    overflow-y: scroll;
+    padding: 10px 5px;
+}
+.chatbox .left::-webkit-scrollbar{
+    width: 5px;
+}
+.chatbox .left::-webkit-scrollbar-thumb{
+    background-color: #9b9b9b;
+}
+.chatbox .left .user_link{
+    color: black;
+}
+.chatbox .chat-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    height: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+.chatbox .chat-item:hover{
+    background: var(--white);
+}
+.chatbox .chat-item img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chatbox .chat-item p {
+    margin: 0;
+}
+.chatbox .right{
+    height: 100%;
+    flex-basis: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.chatbox .right .user-details{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--blue);
+}
+.chatbox .right .user-details img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+.chatbox .right .user-details p{
+    margin: 0;
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+.chatbox .right b{
+    font-size: 30px;
+    height: 100%;
+    color: var(--white);
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbox .input{
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    height: 50px;
+    display: flex;
+}
+.chatbox .input input {
+    width:auto;
+    padding: 5px 10px;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    font-weight: 400;
+}
+.chatbox .input input::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+.chatbox .input input:focus{
+    outline: none;
+}
+.chatbox .input input[type="submit"]{
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 150px;
+}
+
+.chatbox .message-section{
+    display: flex;
+    flex-flow: column-reverse;
+    height: 450px;
+    overflow-y: scroll;
+    padding: 0 20px;
+}
+.chatbox .message-section::-webkit-scrollbar{
+    width: 5px;
+}
+/* .chatbox .message-section::-webkit-scrollbar-thumb{
+    background-color: #474646;
+} */
+.chatbox .message-section .message{
+    display:grid;
+    background-color: #1d4e61;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 400;
+
+}
+.chatbox .message-section .my-msg{
+    
+    align-self: flex-end;
+}
+.chatbox .message-section .your-msg{
+    background-color: #724fa0;
+    color: var(--white);
+    align-self: flex-start;
+}
+
+
+
+/* navbar */
+
+nav{
+    width: 100vw;
+    height: 50px;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+nav .nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-wrapper .logo a{
+    font-size: 30px;
+    color: var(--white);
+}
+nav .nav-wrapper ul li a{
+    color: var(--white);
+    font-size: 18px;
+    text-transform: capitalize;
+}

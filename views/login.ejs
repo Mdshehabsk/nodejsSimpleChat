@@ -1,0 +1,31 @@
+<%- include('./common/start.ejs') %> <% if (err) { %> <div class="alert alert-danger" > <%= err %>  </div> <% }else{%> <% null %>  <%} %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="login">
+        <div class="heading">
+          <h1>Login Form</h1>
+        </div>
+        <form autocomplete="off" action="/" method="post">
+          <div class="input-box" style="margin-top: 20px">
+            <label for="email">email </label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="input-box">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+
+          <div class="input-box">
+            <input type="submit" value="Login" class="submit-btn" />
+          </div>
+          <div class="input-box">
+            <p>Dont have any account?</p>
+            <a href="/register" class="login-btn">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./common/end.ejs') %>

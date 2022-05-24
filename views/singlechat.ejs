@@ -1,0 +1,61 @@
+<%- include('./common/start.ejs') %>
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="logo">
+        <a href="/">Chat</a>
+      </div>
+      <ul>
+        <li>
+          <a href="/logout">logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="chatbox">
+    <div class="left">
+      <% user.forEach(element => { %>
+        <a href=" /chat/<%= element._id %>  " class="user_link" >
+          <div class="chat-item">
+            <img src="/image/<%= element.avatar %>" alt="no image" />
+            <div class="info">
+              <b> <%= element.firstname + element.lastname %>  </b>
+            </div>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+    <div class="right">
+      <div class="user-details">
+        <img src="../image/<%= currentUser.avatar %>" alt="no image" />
+        <div class="info">
+          <p> <%= currentUser.firstname + currentUser.lastname %>  </p>
+        </div>
+      </div>
+      <div class="message-section">
+          <% message.reverse().forEach(element => { %>
+           <% if (you !== element.receiver) { %>
+            <div class="your-msg message" >
+                <p> <%= element.message %>  </p>
+            </div>
+           <% }else{%> 
+            <div class="my-msg message" >
+                <p> <%= element.message %>  </p>
+            </div>
+            <%} %>
+          <% }) %>
+      </div>
+      <p id="you" style="display:none ;" ><%= you %></p>
+      <p id="me" style="display:none ;" ><%= me %></p>
+
+      <div class="input">
+        <input id="input" type="text" name="msg" placeholder="Enter message" value="" />
+        <input type="submit" id="submit_btn" onclick="submitmessage('<%= currentUser._id  %>' )" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./common/end.ejs') %>
